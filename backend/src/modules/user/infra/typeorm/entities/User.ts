@@ -4,11 +4,13 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  Unique,
 } from 'typeorm';
 import { Exclude, Expose } from 'class-transformer';
 import uploadConfig from '@config/upload';
 
 @Entity('users')
+@Unique(['email'])
 class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -29,10 +29,14 @@ class ListProvidersService {
         except_user_id: user_id,
       });
 
+      const providersSerialized = classToClass(providers);
+
       await this.cacheProvider.save(
         `providers-list:${user_id}`,
-        classToClass(providers)
+        providersSerialized
       );
+
+      return providersSerialized;
     }
 
     return providers;

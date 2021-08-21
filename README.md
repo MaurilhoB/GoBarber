@@ -37,11 +37,13 @@ $ cd gobarber
 
 #### Backend
 
-Após subir uma instancia do Postgres, Redis e MongoDB execute:
+Após configurar seu .env seguindo o padrão do .env.example suba uma instancia do Postgres, Redis e MongoDB e execute:
 
 ```sh
 $ cd backend
-$ yarn && yarn dev:server
+$ yarn
+$ yarn typeorm migration:run
+$ yarn dev:server
 ```
 
 #### Frontend Web
